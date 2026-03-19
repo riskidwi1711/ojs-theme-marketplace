@@ -3,7 +3,7 @@
 # =====================
 # Stage 1: Go Builder
 # =====================
-FROM golang:1.21-alpine AS go-builder
+FROM golang:1.25-alpine AS go-builder
 WORKDIR /app/server
 
 COPY server/go.mod server/go.sum ./
