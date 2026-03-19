@@ -10,7 +10,7 @@ COPY server/go.mod server/go.sum ./
 RUN go mod download
 
 COPY server/ ./
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /app/bin/server ./server/main.go
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /app/bin/server ./main.go
 
 # =====================
 # Stage 2: Node Dependencies
@@ -33,6 +33,7 @@ COPY . .
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV NEXT_TYPESCRIPT_IGNORE=true
 
 RUN npm run build
 

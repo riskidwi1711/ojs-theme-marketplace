@@ -1,5 +1,8 @@
 import http from "@/api/http";
-import { ProductItem, ListParams } from "@/types";
+import type { ProductItem, ListParams } from "@/types";
+
+export type { ProductItem };
+export type { ListParams };
 
 export async function listProducts(params?: ListParams): Promise<ProductItem[]> {
   const res = await http.get("/api/v1/products", { params });
