@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+/* Design tokens */
+:root {
+  /* Base palette */
+  --background: #ffffff;
+  --foreground: #1f2937; /* gray-800 */
+  --muted: #f5f7fb; /* light surface */
+  --border: #e5e7eb; /* gray-200 */
+
+  /* Brand (Open Themes – OJS Marketplace) */
+  --primary: #3e9020;   /* green – from logo "Themes" */
+  --primary-600: #317318;
+  --primary-100: #eaf5e1;
+  --navy: #1c3b6d;      /* navy – from logo "Open" */
+
+  /* Semantic */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+}
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-600: var(--primary-600);
+  --color-primary-100: var(--primary-100);
+  --color-navy: var(--navy);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-danger: var(--danger);
+
+  /* Typography */
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(15, 23, 42, 0.06), 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* Dark mode intentionally disabled — marketplace is light-only */
+
+/* Base */
+html, body {
+  height: 100%;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
+    Segoe UI, Roboto, Helvetica Neue, Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji";
+}
+
+/* Utilities aligned to DS */
+.surface {
+  background-color: var(--background);
+}
+
+.surface-muted {
+  background-color: var(--muted);
+}
+
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+.container-page {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
